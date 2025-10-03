@@ -32,6 +32,9 @@ int main(void)
   Serial0_setup();
   init_and_wait();
 
+  event_timer_start();
+  event_timer_stop();
+
 
 
   SRAM_f_pwrite_10 = malloc_subroutine(f_word_partial_write_10, end_f_word_partial_write_10);

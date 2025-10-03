@@ -11,7 +11,7 @@ void event_timer_start(void)
 
 void event_timer_stop(void)
 {
-  _event_timer_value = TA0R - 8; // minus function overhead uS
+  _event_timer_value = TA0R - 7; // function call 4 CC + mov 3 CC
   TA0CTL &= ~MC_3; // halt timer
 }
 

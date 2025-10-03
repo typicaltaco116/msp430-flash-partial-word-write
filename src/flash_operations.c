@@ -114,7 +114,7 @@ void f_safe_word_write(uint16_t value, uint16_t* targetPtr, f_segment_t seg, uin
   savedArray[(targetPtr - seg) >> 1] = value;
   // place new value
 
-  f_erase_segment(seg);
+  f_segment_erase(seg);
 
   for(int i = 0; i < segSize; i++) // write values
     f_word_write(savedArray[i], (uint16_t*)seg + i);
